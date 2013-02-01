@@ -96,10 +96,10 @@ function remove_host() {
 case $ACTION in
     ADD) # Adding the new hostname to the /etc/hosts file.
         add_host '127\.0\.0\.1' $HOST 'IPv4'
-        [ $IPV6 == "yes" ] && add_host '::1' $HOST 'IPv6'
+        [ "$IPV6" == "yes" ] && add_host '::1' $HOST 'IPv6'
         ;;
     REMOVE) # Removing the hostname.
         remove_host '127\.0\.0\.1' $HOST 'IPv4'
-        [ $IPV6 == "yes" ] && remove_host '::1' $HOST 'IPv6'
+        [ "$IPV6" == "yes" ] && remove_host '::1' $HOST 'IPv6'
         ;;
 esac
